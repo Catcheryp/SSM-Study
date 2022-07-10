@@ -7,6 +7,7 @@ public class Book {
     //创建属性
     private String bname;
     private String bauthor;
+
     //创建属性对应的set方法
     public void setBname(String bname) {
         this.bname = bname;

@@ -6,12 +6,19 @@
     <!--<bean id="user" class="com.yp.demo.User"></bean>-->
 
     <!--2 set方法注入属性-->
-    <bean id="book" class="com.yp.demo.Book">
-        <!--使用property完成属性注入
+    <!--<bean id="book" class="com.yp.demo.Book">
+        &lt;!&ndash;使用property完成属性注入
             name：类里面属性名称
             value：向属性注入的值
-        -->
+        &ndash;&gt;
         <property name="bname" value="易筋经"></property>
         <property name="bauthor" value="达摩老祖"></property>
+    </bean>-->
+
+    <!--3.有参数构造注入属性-->
+    <bean id="orders" class="com.yp.demo.Orders">
+        <constructor-arg name="oname" value="电脑"></constructor-arg>
+        <constructor-arg name="address" value="China"></constructor-arg>
     </bean>
+
 </beans>
