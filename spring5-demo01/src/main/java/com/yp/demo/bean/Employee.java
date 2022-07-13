@@ -5,6 +5,10 @@ public class Employee {
     private String gender;
     private Department department;
 
+    public Department getDepartment() {
+        return department;
+    }
+
     public void setEname(String ename) {
         this.ename = ename;
     }

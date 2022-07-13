@@ -18,7 +18,7 @@ public class TestBean {
 
     @Test
     public void testBean2(){
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean3.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml");
         Employee employee = context.getBean("employee", Employee.class);
 
         employee.add();
