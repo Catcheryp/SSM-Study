@@ -1,5 +1,6 @@
 package com.yp.demo.test;
 
+import com.yp.demo.bean.Orders;
 import com.yp.demo.collectiontype.Book;
 import com.yp.demo.collectiontype.Course;
 import com.yp.demo.collectiontype.Student;
@@ -35,6 +36,17 @@ public class TestBean {
         Course course = context.getBean("myBean", Course.class);
 
         System.out.println(course);
+    }
+
+    @Test
+    public void testBean3(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml");
+        Orders orders = context.getBean("orders", Orders.class);
+        System.out.println("------创建bean实例对象------");
+        System.out.println(orders);
+
+        // 手动销毁bean实例
+        context.close();
     }
 
 }
