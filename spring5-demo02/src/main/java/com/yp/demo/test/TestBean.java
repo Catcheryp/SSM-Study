@@ -1,6 +1,7 @@
 package com.yp.demo.test;
 
 import com.yp.demo.collectiontype.Book;
+import com.yp.demo.collectiontype.Course;
 import com.yp.demo.collectiontype.Student;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -21,6 +22,14 @@ public class TestBean {
         Book book = context.getBean("book", Book.class);
 
         book.test();
+    }
+
+    @Test
+    public void test3(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean3.xml");
+        Course course = context.getBean("myBean", Course.class);
+
+        System.out.println(course);
     }
 
 }
