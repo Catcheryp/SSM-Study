@@ -1,5 +1,6 @@
 package com.yp.demo.test;
 
+import com.yp.demo.autowire.Employee;
 import com.yp.demo.bean.Orders;
 import com.yp.demo.collectiontype.Book;
 import com.yp.demo.collectiontype.Course;
@@ -47,6 +48,13 @@ public class TestBean {
 
         // 手动销毁bean实例
         context.close();
+    }
+
+    @Test
+    public void testAutowire(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean5.xml");
+        Employee employee = context.getBean("employee", Employee.class);
+        System.out.println(employee);
     }
 
 }
