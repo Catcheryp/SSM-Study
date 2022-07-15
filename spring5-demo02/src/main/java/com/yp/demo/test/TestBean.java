@@ -19,9 +19,14 @@ public class TestBean {
     @Test
     public void testCollection2(){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean2.xml");
-        Book book = context.getBean("book", Book.class);
+        // Book book = context.getBean("book", Book.class);
+        //
+        // book.test();
 
-        book.test();
+        Book book1 = context.getBean("book", Book.class);
+        Book book2 = context.getBean("book", Book.class);
+        System.out.println(book1);
+        System.out.println(book2);
     }
 
     @Test

@@ -13,7 +13,7 @@
             <value>Python教程</value>
         </util:list>
 
-        <!--2.提取list集合类型属性注入使用-->
+        <!--2.提取list集合类型属性注入使用，prototype表示多实例-->
         <bean id="book" class="com.yp.demo.collectiontype.Book" scope="prototype">
             <property name="list" ref="bookList"></property>
         </bean>
