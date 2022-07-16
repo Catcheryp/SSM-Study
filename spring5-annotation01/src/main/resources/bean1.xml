@@ -13,5 +13,22 @@
         1.如果扫描多个包，多个包使用逗号隔开
         2.扫描包上层目录
     -->
-    <context:component-scan base-package="com.yp"></context:component-scan>
+    <!--<context:component-scan base-package="com.yp" ></context:component-scan>-->
+
+    <!--
+        1.use-default-filters="false"表示现在不使用默认filter，自己配置filter
+        2.context:include-filter， 设置扫描哪些内容，白名单机制
+        3.context:exclude-filter， 设置哪些内容不进行扫描，黑名单机制
+    -->
+    <!--<context:component-scan base-package="com.yp" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.beans.factory.annotation.Value"/>
+        <context:include-filter type="annotation" expression="org.springframework.beans.factory.annotation.Autowired"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>-->
+
+    <context:component-scan base-package="com.yp">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
 </beans>
