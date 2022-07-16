@@ -8,6 +8,8 @@ import com.yp.demo.collectiontype.Student;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.sql.DataSource;
+
 public class TestBean {
 
     @Test
