@@ -8,12 +8,22 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect // 生成代理对象
 public class UserProxy {
+    // 相同切入点抽取
+    @Pointcut(value = "execution(* com.yp.demo.aopannotation.User.add(..))")
+    public void pointdemo(){
+
+    }
 
     // @Before注解表示为前置通知
-    @Before(value = "execution(* com.yp.demo.aopannotation.User.add(..))")
+    /*@Before(value = "execution(* com.yp.demo.aopannotation.User.add(..))")
+    public void before(){
+        System.out.println("before......");
+    }*/
+    @Before(value = "pointdemo()")
     public void before(){
         System.out.println("before......");
     }
+
 
     // 后置通知(返回通知)
     @AfterReturning(value = "execution(* com.yp.demo.aopannotation.User.add(..))")
