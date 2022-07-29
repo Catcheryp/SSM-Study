@@ -30,12 +30,19 @@ public class ShiroConfig {
         Map<String, String> filterMap = new LinkedHashMap<>();
         /*filterMap.put("/user/add", "authc");
         filterMap.put("/user/update", "authc");*/
+
         // 拦截
+        // 授权，正常情况下，没有授权会跳转到未授权页面
+        filterMap.put("/user/add", "perms[user:add]");
+        filterMap.put("/user/update", "perms[user:update]");
         filterMap.put("/user/*", "authc");
         bean.setFilterChainDefinitionMap(filterMap);
 
         // 设置登录的请求
         bean.setLoginUrl("/toLogin");
+
+        // 未授权页面
+        bean.setUnauthorizedUrl("/noauth");
 
         return bean;
     }
